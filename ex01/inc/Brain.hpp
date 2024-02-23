@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cedmulle <cedmulle@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 09:25:40 by cedmulle          #+#    #+#             */
-/*   Updated: 2024/02/23 17:03:29 by cedmulle         ###   ########.fr       */
+/*   Created: 2024/02/23 17:16:23 by cedmulle          #+#    #+#             */
+/*   Updated: 2024/02/23 18:28:07 by cedmulle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
-# include <iostream>
-# include <string>
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 # include "colors.hpp"
+# include "Animal.hpp"
 
-class	WrongAnimal
+class	Brain
 {
 	public:
-		WrongAnimal();
-		WrongAnimal(const WrongAnimal &w);
-		WrongAnimal &operator=(const WrongAnimal &w);
-		~WrongAnimal();
+		Brain();
+		Brain(const Brain &b);
+		Brain &operator=(const Brain &b);
+		~Brain();
 
-		void makeSound();
-	protected:
-		std::string type;
+		// Pour modularité
+		const static int nbIdeas = 100;
+
+		// Getters & Setters
+		std::string	getIdea(int index);
+		void		setIdea(int index, const std::string idea);
+	private:
+		std::string	ideas[nbIdeas];
 };
 
 #endif

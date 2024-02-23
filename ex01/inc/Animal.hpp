@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cedmulle <cedmulle@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 09:25:40 by cedmulle          #+#    #+#             */
-/*   Updated: 2024/02/23 17:03:29 by cedmulle         ###   ########.fr       */
+/*   Created: 2024/02/23 08:49:51 by cedmulle          #+#    #+#             */
+/*   Updated: 2024/02/23 18:27:25 by cedmulle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
+
 # include <iostream>
 # include <string>
 # include "colors.hpp"
 
-class	WrongAnimal
+class	Animal
 {
 	public:
-		WrongAnimal();
-		WrongAnimal(const WrongAnimal &w);
-		WrongAnimal &operator=(const WrongAnimal &w);
-		~WrongAnimal();
+		Animal();
+		Animal(const Animal &a);
+		Animal &operator=(const Animal &a);
+		virtual ~Animal();
 
-		void makeSound();
+		virtual void makeSound();
 	protected:
 		std::string type;
 };

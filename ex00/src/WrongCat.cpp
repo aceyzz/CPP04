@@ -15,13 +15,13 @@
 WrongCat::WrongCat(void)
 {
 	this->type = "WrongCat";
-	std::cout << D_CYA "🐱 A WrongCat just appeared. Hi Garfield !" RST << std::endl;
+	std::cout << CYAN "🐱 A WrongCat just appeared. Hi Garfield !" RST << std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat &d)
 {
 	this->type = d.type;
-	std::cout << D_CYA "🐱 A twin of our WrongCat just appeared ! They're cute." RST << std::endl;
+	std::cout << CYAN "🐱 A twin of our WrongCat just appeared ! They're cute." RST << std::endl;
 }
 
 WrongCat& WrongCat::operator=(const WrongCat &d)
@@ -32,5 +32,5 @@ WrongCat& WrongCat::operator=(const WrongCat &d)
 
 WrongCat::~WrongCat(void)
 {
-	std::cout << D_CYA "🐱 The WrongCat just left. He just wanted food." RST << std::endl;
+	std::cout << CYAN "🐱 The WrongCat just left. He just wanted food." RST << std::endl;
 }
