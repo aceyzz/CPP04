@@ -6,7 +6,7 @@
 /*   By: cedmulle <cedmulle@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 08:02:01 by cedmulle          #+#    #+#             */
-/*   Updated: 2024/02/24 10:14:13 by cedmulle         ###   ########.fr       */
+/*   Updated: 2024/02/24 15:40:58 by cedmulle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class	ICharacter;
 class	AMateria
 {
 	public:
+		AMateria();
 		AMateria(const std::string &type);
 		AMateria(const AMateria &a);
 		virtual ~AMateria();

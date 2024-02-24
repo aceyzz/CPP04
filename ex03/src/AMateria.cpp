@@ -6,11 +6,16 @@
 /*   By: cedmulle <cedmulle@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 08:06:08 by cedmulle          #+#    #+#             */
-/*   Updated: 2024/02/24 10:21:36 by cedmulle         ###   ########.fr       */
+/*   Updated: 2024/02/24 15:41:30 by cedmulle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+
+AMateria::AMateria(void)
+{
+	//std::cout << GRY1 "Default default constructor called AMateria" RST << std::endl;
+}
 
 AMateria::AMateria(const std::string &type)
 {
@@ -21,7 +26,7 @@ AMateria::AMateria(const std::string &type)
 AMateria::AMateria(const AMateria &a)
 {
 	//std::cout << GRY1 "Copy constructor called AMateria" RST << std::endl;
-	*this = a;
+	this->type = a.type;
 }
 
 AMateria::~AMateria(void)
@@ -32,8 +37,7 @@ AMateria::~AMateria(void)
 AMateria& AMateria::operator=(const AMateria &a)
 {
 	//std::cout << GRY1 "Assignement contructor called AMateria" RST << std::endl;
-	if (this != &a)
-		this->type = a.type;
+	this->type = a.type;
 	return (*this);
 }
 

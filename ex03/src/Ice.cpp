@@ -6,7 +6,7 @@
 /*   By: cedmulle <cedmulle@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 08:25:41 by cedmulle          #+#    #+#             */
-/*   Updated: 2024/02/24 10:25:32 by cedmulle         ###   ########.fr       */
+/*   Updated: 2024/02/24 15:46:35 by cedmulle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 #include "ICharacter.hpp"
 
 Ice::Ice(void)
-: AMateria("ice")
 {
 	//std::cout << GRY1 "Default constructor called Ice" RST << std::endl;
+	this->type = "ice";
 }
 
 Ice::Ice(const Ice &i)
-: AMateria(i)
 {
 	//std::cout << GRY1 "Copy constructor called Ice" RST << std::endl;
+	(void)i;
+	this->type = "ice";
 }
 
 Ice::~Ice(void)
@@ -32,14 +33,13 @@ Ice::~Ice(void)
 
 Ice&	Ice::operator=(const Ice &i)
 {
-	if (this != &i)
-		AMateria::operator=(i);
+	(void)i;
 	return (*this);
 }
 
 AMateria*	Ice::clone(void) const
 {
-	return (new Ice(*this));
+	return (new Ice());
 }
 
 void		Ice::use(ICharacter &target)
