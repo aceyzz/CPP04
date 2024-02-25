@@ -81,7 +81,7 @@ Cet exercice illustre l'importance des classes abstraites dans la conception de 
 
 <br>
 
-## Exercice 03 - Interface & Récap
+## Exercice 03 - Interface & Récap (Bonus)
 
 L'exercice 03 du module C++ sur le polymorphisme par sous-typage, les classes abstraites, et les interfaces demande d'implémenter un système de gestion de materias inspiré de jeux comme Final Fantasy. Voici un résumé des exigences et concepts clés à maîtriser pour cet exercice.
 
