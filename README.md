@@ -1,5 +1,7 @@
 <img src="utils/1.png" width= 100%>
 
+---
+
 ## Exercice 00 - Polymorphisme
 
 L'exercice 00 consiste à introduire les concepts de base du polymorphisme en C++ à travers une hiérarchie de classes d'animaux, y compris une mise en œuvre délibérément erronée pour illustrer les effets du polymorphisme incorrect.
