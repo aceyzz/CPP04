@@ -122,5 +122,6 @@ Le code principal montre comment créer des sources de materias, apprendre de no
 Cet exercice avancé combine plusieurs concepts clés de la programmation orientée objet en C++ pour construire un système complexe mais flexible de gestion des materias, en mettant l'accent sur la conception d'interface, le polymorphisme, et la gestion correcte de la mémoire.
 
 ### REMARQUE
-> Mon implémentation pour cet exercice avec des leaks de mémoires dans certains tests spécifiques. Je revendrais très certainement dessus prochainement. Le code est disponible sur l'un des commits pour les plus curieux.
+~~Mon implémentation pour cet exercice avec des leaks de mémoires dans certains tests spécifiques. Je revendrais très certainement dessus prochainement. Le code est disponible sur l'un des commits pour les plus curieux.~~
 
+[12.03.2024] Fixed ! Les leaks de mémoire provenaient du fait que la fonction membre `unequip()` perdait la trace (sans le `delete`) du `AMateria*` qu'elle enlevait de son inventaire. Donc, j'ai implémenter une fonction `getMateria(int idx)` qui permet de recuperer le pointeur et le stocker (dans le `main`) avant de l'`unequip()`. Ceci permet donc de le supprimer proprement a la fin du programme, ou bien de le réassigner au besoin.
