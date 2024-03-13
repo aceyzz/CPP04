@@ -4,6 +4,9 @@
 
 ## Exercice 00 - Polymorphisme
 
+<details>
+  <summary>Afficher/Masquer</summary>
+
 L'exercice 00 consiste à introduire les concepts de base du polymorphisme en C++ à travers une hiérarchie de classes d'animaux, y compris une mise en œuvre délibérément erronée pour illustrer les effets du polymorphisme incorrect.
 
 ### Mon implémentation
@@ -30,9 +33,14 @@ L'exercice 00 consiste à introduire les concepts de base du polymorphisme en C+
 
 Cet exercice illustre l'importance du polymorphisme en C++ et montre comment une conception soignée des classes et de l'héritage permet d'obtenir des comportements dynamiques attendus. Il met également en évidence les pièges potentiels du polymorphisme lorsqu'il est mal utilisé.
 
+</details>
+
 <br>
 
 ## Exercice 01 - Je ne veux pas brûler le monde
+
+<details>
+  <summary>Afficher/Masquer</summary>
 
 L'exercice 01 continue sur le thème du polymorphisme, introduisant la composition avec la classe `Brain` représentant l'intelligence des animaux.
 
@@ -56,9 +64,14 @@ L'exercice 01 continue sur le thème du polymorphisme, introduisant la compositi
 
 Cet exercice approfondit la compréhension du polymorphisme et de la composition en C++, mettant en évidence les défis liés à la gestion de la mémoire et à l'indépendance des états entre les instances. La mise en œuvre de la copie profonde est essentielle pour maintenir l'intégrité de l'état interne lors de la copie d'objets complexes.
 
+</details>
+
 <br>
 
 ## Exercice 02 - Classe abstraite
+
+<details>
+  <summary>Afficher/Masquer</summary>
 
 L'exercice 02 transforme la classe `Animal` en une classe abstraite pour éviter son instanciation directe, renforçant le concept de polymorphisme en C++.
 
@@ -81,9 +94,14 @@ L'exercice 02 transforme la classe `Animal` en une classe abstraite pour éviter
 
 Cet exercice illustre l'importance des classes abstraites dans la conception de hiérarchies d'objets et renforce le concept de polymorphisme. En empêchant l'instanciation directe de `Animal`, on garantit que seuls les objets bien définis avec un comportement spécifique peuvent être créés, évitant ainsi les erreurs potentielles et renforçant la robustesse du code.
 
+</details>
+
 <br>
 
 ## Exercice 03 - Interface & Récap (Bonus)
+
+<details>
+  <summary>Afficher/Masquer</summary>
 
 L'exercice 03 du module C++ sur le polymorphisme par sous-typage, les classes abstraites, et les interfaces demande d'implémenter un système de gestion de materias inspiré de jeux comme Final Fantasy. Voici un résumé des exigences et concepts clés à maîtriser pour cet exercice.
 
@@ -116,6 +134,8 @@ L'exercice 03 du module C++ sur le polymorphisme par sous-typage, les classes ab
 #### Exemple d'Exécution:
 
 Le code principal montre comment créer des sources de materias, apprendre de nouvelles materias, les créer par nom, les équiper sur des personnages, et les utiliser. Il illustre l'interaction entre différents composants du système de materias et met en évidence l'utilisation du polymorphisme et des interfaces pour construire un cadre extensible pour les objets de jeu.
+
+</details>
 
 #### Conclusion:
 
