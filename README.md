@@ -1,6 +1,13 @@
-<img src="utils/1.png" width= 100%>
+<img src="git_utils/banner.png" width= 100%>
+
+<br>
 
 ---
+
+<br>
+
+<details>
+<summary>FRENCH VERSION</summary>
 
 ## Exercice 00 - Polymorphisme
 
@@ -145,3 +152,160 @@ Cet exercice avancé combine plusieurs concepts clés de la programmation orient
 ~~Mon implémentation pour cet exercice avec des leaks de mémoires dans certains tests spécifiques. Je revendrais très certainement dessus prochainement. Le code est disponible sur l'un des commits pour les plus curieux.~~
 
 [12.03.2024] Fixed ! Les leaks de mémoire provenaient du fait que la fonction membre `unequip()` perdait la trace (sans le `delete`) du `AMateria*` qu'elle enlevait de son inventaire. Donc, j'ai implémenter une fonction `getMateria(int idx)` qui permet de recuperer le pointeur et le stocker (dans le `main`) avant de l'`unequip()`. Ceci permet donc de le supprimer proprement a la fin du programme, ou bien de le réassigner au besoin.
+
+</details>
+
+<br>
+
+---
+
+<br>
+
+<details>
+<summary>ENGLISH VERSION</summary>
+
+## Exercise 00 - Polymorphism
+
+<details>
+	<summary>Show/Hide</summary>
+
+Exercise 00 introduces the basic concepts of polymorphism in C++ through a hierarchy of animal classes, including a deliberately flawed implementation to illustrate the effects of incorrect polymorphism.
+
+### My Implementation
+
+[Link here](https://github.com/aceyzz/CPP04/tree/main/ex00)
+
+#### Base Class `Animal`
+- **Protected Attribute**: `std::string type;` to define the type of animal.
+- **Method**: `makeSound()` outputs a non-specific sound, illustrating default behavior.
+
+#### Derived Classes `Dog` and `Cat`
+- Inherit from `Animal` and initialize `type` to "Dog" and "Cat" respectively.
+- **Method**: `makeSound()` is overridden to output specific sounds for each animal.
+
+#### Classes `WrongAnimal` and `WrongCat`
+- Serve to illustrate bad practices in polymorphism.
+- `WrongCat` mistakenly outputs the sound of `WrongAnimal` when polymorphism is misused.
+
+#### Usage
+- The `main.cpp` file demonstrates the difference between the expected behaviors of properly implemented classes (`Animal`, `Dog`, `Cat`) and those resulting from the flawed implementation (`WrongAnimal`, `WrongCat`).
+- Constructors and destructors of each class output unique messages, allowing tracking of the object lifecycle.
+
+### Conclusion
+
+This exercise highlights the importance of polymorphism in C++ and shows how careful class and inheritance design can achieve expected dynamic behaviors. It also emphasizes the potential pitfalls of polymorphism when misused.
+
+</details>
+
+<br>
+
+## Exercise 01 - I Don't Want to Burn the World
+
+<details>
+	<summary>Show/Hide</summary>
+
+Exercise 01 continues the theme of polymorphism, introducing composition with the `Brain` class representing the intelligence of animals.
+
+### My Implementation
+
+[Link here](https://github.com/aceyzz/CPP04/tree/main/ex01)
+
+#### Class `Brain`
+- Contains an array of 100 `std::string` to represent a brain's ideas.
+- Provides methods to access and modify these ideas, enabling detailed management of the brain's internal state.
+
+#### Changes in `Dog` and `Cat`
+- Each `Dog` and `Cat` now has a pointer to a `Brain`, initialized during construction and destroyed during destruction.
+- Copying a `Dog` or `Cat` results in a deep copy of the `Brain`, ensuring independence of mental states between instances.
+
+#### Functionality
+- The `main.cpp` demonstrates the creation, manipulation, and destruction of `Animal`, `Dog`, and `Cat` objects, with particular attention to memory management and polymorphism.
+- Tests include verifying deep copy behavior for `Dog` and `Cat` classes, ensuring brains are properly cloned.
+
+### Conclusion
+
+This exercise deepens the understanding of polymorphism and composition in C++, highlighting challenges related to memory management and state independence between instances. Implementing deep copy is essential to maintain the integrity of internal states when copying complex objects.
+
+</details>
+
+<br>
+
+## Exercise 02 - Abstract Class
+
+<details>
+	<summary>Show/Hide</summary>
+
+Exercise 02 transforms the `Animal` class into an abstract class to prevent its direct instantiation, reinforcing the concept of polymorphism in C++.
+
+### My Implementation
+
+[Link here](https://github.com/aceyzz/CPP04/tree/main/ex02)
+
+#### Key Changes
+- The `makeSound()` function in the `Animal` class is now purely virtual (`= 0`), making `Animal` abstract and non-instantiable directly.
+- The `Dog` and `Cat` classes implement their own version of `makeSound()`, preserving specific behavior for each animal.
+
+#### Class `Brain`
+- The management of the `Brain` remains unchanged, with each `Dog` and `Cat` having its own `Brain` to store ideas.
+
+#### Tests
+- The `main.cpp` file demonstrates the creation and manipulation of `Dog` and `Cat` objects through `Animal` pointers, following the principle of polymorphism.
+- Additional tests verify the deep copy of `Dog` and `Cat` objects, ensuring proper cloning of `Brain`.
+
+### Conclusion
+
+This exercise illustrates the importance of abstract classes in designing object hierarchies and reinforces the concept of polymorphism. By preventing the direct instantiation of `Animal`, only well-defined objects with specific behavior can be created, avoiding potential errors and strengthening code robustness.
+
+</details>
+
+<br>
+
+## Exercise 03 - Interface & Recap (Bonus)
+
+<details>
+	<summary>Show/Hide</summary>
+
+Exercise 03 of the C++ module on subtype polymorphism, abstract classes, and interfaces requires implementing a materia management system inspired by games like Final Fantasy. Here is a summary of the requirements and key concepts to master for this exercise.
+
+#### Main Objectives:
+
+1. **AMateria Purely Abstract Base Class:**
+	 - `AMateria` serves as the base class for specific materia types like `Ice` and `Cure`.
+	 - It must contain at least one pure virtual method `clone()` that forces derived classes to implement a cloning mechanism.
+
+2. **Implementation of Specific Materias:**
+	 - The `Ice` and `Cure` classes must be concrete and inherit from `AMateria`.
+	 - They implement the `clone()` method, returning a new instance of the same type.
+	 - The `use()` method should display a message specific to each materia type when acting on a target character.
+
+3. **The `Character` Class:**
+	 - Implements the `ICharacter` interface.
+	 - Manages an inventory of up to 4 `AMateria` objects.
+	 - Provides mechanisms to equip, unequip (without deleting), and use materias on targets.
+	 - Copying a `Character` involves deep copying all equipped materias.
+
+4. **MateriaSource Management:**
+	 - The `MateriaSource` class implements the `IMateriaSource` interface.
+	 - Can learn up to 4 types of materias, allowing the creation of new instances of these materias by name.
+	 
+5. **Design Principles:**
+	 - Use polymorphism to manage various materia types through a common base type.
+	 - Demonstrate the concept of interfaces in C++ via purely abstract classes.
+	 - Proper memory management, especially during deep copying and object deletion, to avoid memory leaks.
+
+#### Example Execution:
+
+The main code demonstrates how to create materia sources, learn new materias, create them by name, equip them on characters, and use them. It illustrates the interaction between different components of the materia system and highlights the use of polymorphism and interfaces to build an extensible framework for game objects.
+
+</details>
+
+#### Conclusion:
+
+This advanced exercise combines several key concepts of object-oriented programming in C++ to build a complex yet flexible materia management system, emphasizing interface design, polymorphism, and proper memory management.
+
+### NOTE
+~~My implementation for this exercise had memory leaks in certain specific tests. I will revisit it soon. The code is available in one of the commits for the curious.~~
+
+[12.03.2024] Fixed! The memory leaks were caused by the `unequip()` member function losing track (without `delete`) of the `AMateria*` it removed from the inventory. I implemented a `getMateria(int idx)` function to retrieve the pointer and store it (in `main`) before calling `unequip()`. This allows proper deletion at the end of the program or reassignment if needed.
+
+</details>
